@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Dashboard</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src=script.js></script>
+</head>
+
+<body>
+  <nav class="navBar">
+    <div id="titleGroup">
+      <a href="index.html" class="site-title"><h1 class="siteTitle">PYCI</h1></a>
+      <h2 class="titleSubheader">preliminary youth credit initiative</h2>
+    </div>
+    <a class="navLink"  href="learn.html">Learn</a>
+    <a class="navLink" href="analyze.html">Analyze</a>
+    <a class="navLink" href="#">Account</a>
+  </nav>
+  <h1>Welcome Back, </h1>
+  <div class="dashboard-ctn">
+    <div class="section">
+      <h2>Section 1</h2>
+      <p>Content for section 1</p>
+    </div>
+    <div class="section">
+      <h2>Transactions</h2>
+      <input type="search" id="search-input" placeholder="Search for anything..." onkeyup=tblSearch() name="q" autocomplete="off">
+     <div class="dropdown">
+      <button class="dropbtn" onclick="dropdownActivate()">Filter</button>
+      <div class="dropdown-content">
+        <div id="categories">
+          <label for="subscriptions">Categories</label><br>
+          <input type="checkbox" onclick="dropdownFilter('subscriptions')" name="subscriptions" class="cbox">Subscriptions</a><br>
+          <input type="checkbox" onclick="dropdownFilter('bills')" class="cbox">Bills</a><br>
+          <input type="checkbox" class="cbox">Entertainment</a><br>
+          <input type="checkbox" onclick="dropdownFilter('food')" class="cbox">Food</a><br>
+          <input type="checkbox" onclick="dropdownFilter('personal')" class="cbox">Personal</a><br>
+        </div>
+        <label for="start-date">Date Range: </label><br>
+        <input type="date" id="start-date" name="start-date">
+        <input type="date" id="end-date" name="end-date"><br>
+        <label for="min-price">Price Range: </label><br>
+        <input type="number" id="min-price" name="min-price" placeholder="Min Price" onkeyup="filterAmount('min-price', 'max-price')">
+        <input type="number" id="max-price" name="max-price" placeholder="Max Price" onkeyup="filterAmount('min-price', 'max-price')"> <br>
+        <button class="reset-btn" onclick="resetFilter()">Clear Filters</button>
+  </div>
+      </div>
+      <table id="transaction-tbl" class="tbl">
+          <tr class="tbl-head">
+            <th>Name</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Category</th>
+          </tr>
+          <tr class="personal-category">
+            <td>Target</td>
+            <td>11/5/23</td>
+            <td><script>document.write(formatCurrency(35.00))</script></td>
+            <td>Personal</td>
+          </tr>
+        <tr class='subscriptions-category'>
+          <td>Netflix</td>
+          <td>11/14/23</td>
+          <td><script>document.write(formatCurrency(16.99))</script></td>
+          <td>Subscriptions</td>
+        </tr>
+        <tr class="food-category">
+          <td>Chick Fil A</td>
+          <td>11/01/23</td>
+          <td><script>document.write(formatCurrency(17.59))</script></td>
+          <td>Food</td>
+        </tr>
+        <tr class="food-category">
+          <td>Whole Foods</td>
+          <td>10/10/23</td>
+          <td><script>document.write(formatCurrency(100.65))</script></td>
+          <td>Food</td>
+        </tr>
+        <tr class="bills-category">
+          <td>T-Mobile</td>
+          <td>10/11/23</td>
+          <td>$105.75</td>
+          <td>Bills</td>
+        </tr>
+        <tr class="food-category">
+          <td>Chick Fil A</td>
+          <td>10/3/23</td>
+          <td><script>document.write(formatCurrency(12.75))</script></td>
+          <td>Food</td>
+        </tr>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Learn</h2>
+      <p>You have nothing in Learn right now</p>
+      <p>Consider the following based on your recent spending habits</p>
+      <a href="#">How to save money with food!</a>
+    </div>
+    <div class="section">
+      <h2>Section 4</h2>
+      <p>Content for section 4</p>
+    </div>
+    <div class="section">
+      <h2>Section 5</h2>
+      <p>Content for section 5</p>
+    </div>
+  </div>
+</body>
+ <!-- <a  href="https://icons8.com/icon/GpyMr0gdGBwS/chat">Chat</a> icon by <a href="https://icons8.com">Icons8</a> --->
+
+</html>
