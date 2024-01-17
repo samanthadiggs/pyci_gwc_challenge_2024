@@ -456,6 +456,7 @@ textarea {
   border-radius:8px;
   padding:4px;
   font-family: 'Inter', sans-serif;
+  resize: none;
 }
 
 #send-btn {
