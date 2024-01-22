@@ -9,7 +9,7 @@ def index():
     ## Display the HTML form template  
     return render_template('signup.html') 
 
-# `read-form` endpoint  
+# `read-form` endpoint
 @app.route('/read-form', methods=['POST']) 
 def read_form(): 
   
@@ -27,7 +27,13 @@ def read_form():
         'T&C':data['terms'],
 
     } 
-  
+
+def index():
+    return render_template('signup.html')
+
+@app.route('/setup')
+def setup():
+    return render_template('setup.html')
 # Main Driver Function 
 if __name__ == '__main__': 
     # Run the application on the local development server 
